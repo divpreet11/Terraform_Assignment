@@ -6,3 +6,9 @@ locals
 random_id
 tfvars
 output block
+
+
+To execute the code, run the following commands:
+terraform init
+terraform plan
+terraform apply
