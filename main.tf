@@ -1,4 +1,4 @@
-# =============3 Different locaations=====================
+# =============3 Different locations=====================
 
 #location-1
 resource "local_file" "location1"{
@@ -13,9 +13,7 @@ resource "local_file" "location1"{
    Position: ${var.position}
    Password : ${local.employee_password}
 
-   EOT
-  
-    
+   EOT  
 }
 
 # location-2
@@ -23,10 +21,8 @@ resource "local_file" "location2"{
     filename = "${path.module}/location2/Technologies.txt"
     content = <<-EOT
     Technologies: ${join("\n", var.Technologies)}
-    
-    EOT
 
-    
+    EOT  
 }
 
 #location-3
@@ -39,8 +35,6 @@ resource "local_file" "location3"{
     Headquator: ${var.Company_Details.Headquater}
 
     EOT
-  
-
 }
 
 #===============random resources=====================
@@ -53,7 +47,6 @@ resource "random_password" "employee_password" {
   special          = true
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
-
 
 locals {
   random_suffix = random_id.random_suffix.hex
